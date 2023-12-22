@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <link rel="shortcut icon" href="./img/bookmarks.png" type="image/x-icon" />
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik+Doodle+Shadow&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- fontawesome file -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <header class="home container py-5">
+      <h1 class="text-center">Bookmarker</h1>
+
+      <div
+        class="title d-flex align-items-center gap-4 justify-content-center py-4"
+      >
+        <i class="fas fa-bookmark fs-4"></i>
+        <h2>Bookmark your favorite sites</h2>
+        <i class="fas fa-bookmark fs-4"></i>
+      </div>
+      <div>
+        <div class="mb-4 w-75 m-auto">
+          <i class="fs-5 me-2 fas fa-book-bookmark secondary"></i>
+          <label for="siteName" class="fs-5 primary mb-2"> Site Name </label>
+          <input
+            oninput="validationName()"
+            type="text"
+            id="siteName"
+            class="form-control"
+            placeholder="Site Name ..."
+          />
+          <div
+            class="alert w-50 m-auto mt-5 text-center fw-bold fs-6 primary d-none"
+            id="nameMsg"
+          >
+            <!-- <i class="fa-solid fa-xmark pe-2 fs-5"></i> -->
+            <i class="fa-regular fa-face-angry pe-2 fs-5"></i>
+            <!-- You Should Enter At Least 3 Characters <br />And A Maximum Of 9 -->
+            <span> You Should Enter From 3 To 9 Characters ... </span>
+          </div>
+        </div>
+        <div class="w-75 m-auto">
+          <i class="fs-5 me-2 fas fa-link secondary"></i>
+          <label for="siteURL" class="fs-5 primary mb-2"> Site URL </label>
+          <input
+            type="url"
+            id="siteURL"
+            class="form-control"
+            oninput="validationUrl()"
+            placeholder="Site URL ..."
+          />
+          <div
+            class="alert w-50 m-auto mt-4 text-center fw-bold fs-5 primary d-none"
+            id="urlMsg"
+          >
+            <i class="fa-regular fa-face-grin-beam"></i>
+            <span>Please Enter Valid URL</span> <br />
+            <i class="fa-regular fa-hand-point-right"></i>
+            <span>"https://www.example.com"</span>
+            <i class="fa-regular fa-hand-point-left"></i>
+          </div>
+        </div>
+        <div class="d-flex">
+          <button
+            onclick=" addBookmark()"
+            id="addBtn"
+            class="my-btn px-4 fs-4 btn m-auto rounded-pill fw-bold my-4"
+          >
+            Submit
+          </button>
+        </div>
+        <div class="d-flex">
+          <button
+            onclick="updateItem()"
+            id="updateBtn"
+            class="my-btn px-4 fs-4 btn m-auto rounded-pill fw-bold d-none my-4"
+          >
+            Update
+          </button>
+        </div>
+      </div>
+      <div>
+        <input
+          oninput="displayData()"
+          id="searchInput"
+          type="search"
+          class="form-control w-75 m-auto mb-4"
+          placeholder="Search By Name ..."
+        />
+        <table class="table table-striped text-center w-75 m-auto my-3">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>Website Name</th>
+              <th>Visit</th>
+              <th>Delete</th>
+              <th>Update</th>
+            </tr>
+          </thead>
+          <tbody id="tBody"></tbody>
+        </table>
+      </div>
+    </header>
+
+    <!-- bootstarap js -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- main js -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

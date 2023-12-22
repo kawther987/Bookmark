@@ -1,0 +1,149 @@
+:root {
+  --primary-color: #6b240c;
+  --secondary-color: #15433d;
+}
+::selection {
+  background-color: #fcf2a9;
+  color: var(--primary-color);
+}
+.primary {
+  color: var(--primary-color);
+}
+.secondary {
+  color: var(--secondary-color);
+}
+body {
+  background: linear-gradient(to right, #00000044, #00000047),
+    url("../img/bg.jpg") center / cover;
+  font-family: "Pacifico", cursive;
+}
+h1,
+.my-btn {
+  font-family: "Rubik Doodle Shadow", cursive;
+}
+
+h1 {
+  font-size: 5.625rem;
+  text-shadow: 1px 1px 2px var(--secondary-color);
+  color: var(--primary-color);
+  /* position: relative; */
+}
+
+.title,
+.my-btn {
+  background-image: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form-control:focus {
+  border: var(--secondary-color);
+  box-shadow: 0 0 5px 2px var(--secondary-color);
+}
+.my-btn {
+  border: 2px solid var(--primary-color);
+  transition: 1s all ease-in-out;
+}
+.my-btn:hover {
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+table,
+.alert {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.table > :not(caption) > * > * {
+  color: #6b240c;
+}
+
+::placeholder {
+  color: var(--secondary-color) !important;
+}
+.update-btn,
+.btn-visit {
+  background-color: var(--primary-color);
+}
+.update-btn:hover,
+.btn-visit:hover {
+  border: 1px solid var(--primary-color);
+}
+
+.btn-delete {
+  background-color: var(--secondary-color);
+}
+.btn-delete:hover {
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.btn-delete,
+.btn-visit,
+.update-btn {
+  color: #fcf2a9;
+  transition: 1s all ease-in-out;
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 70px;
+  }
+  .alert {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  .alert > span {
+    font-size: 14px;
+  }
+}
+
+/* h1::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  left: 0;
+  bottom: 10px;
+  background-color: #fec260;
+  transition: height 350ms;
+  z-index: -1;
+}
+
+h1:hover::before {
+  height: 50%;
+} */
+
+/* .btn-delete {
+  background-image: linear-gradient(
+    to right bottom,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+} */
+
+/* .btn-delete:hover {
+  border: 1px solid var(--primary-color);
+  background-image: none;
+  color: var(--secondary-color);
+} */
+
+.alert {
+  box-shadow: 2px 2px 5px 1px var(--primary-color);
+  background-color: transparent;
+  backdrop-filter: blur(3px);
+}
+
+.swal2-modal {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
