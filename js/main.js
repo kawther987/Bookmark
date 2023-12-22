@@ -24,6 +24,7 @@ function addBookmark() {
     clearData();
     displayData();
     siteName.classList.remove("is-valid");
+    siteURL.classList.remove("is-valid");
     sucess();
   }
 }
