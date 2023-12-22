@@ -130,6 +130,8 @@ function updateItem() {
   bookList.splice(indexUpdate, 1, book);
   localStorage.setItem("books", JSON.stringify(bookList));
   displayData();
+  siteName.classList.remove("is-valid");
+  siteURL.classList.remove("is-valid");
 
   addBtn.classList.remove("d-none");
   updateBtn.classList.add("d-none");
